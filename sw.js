@@ -1,16 +1,16 @@
-importScripts("/lib/Dexie/dexie.js");
-importScripts("/lib/fontawesome/all.js")
+importScripts("./lib/Dexie/dexie.js");
+importScripts("./lib/fontawesome/all.js")
 
 
 const staticTodoApp = "todoPWA-v1";
 const assets = [
   "/",
-  "/index.html",
-  "/lib/Dexie/dexie.js",
-  "/style.css",
-  "/lib/fontawesome/all.js",
-  "/Db.js",
-  "/main.js",
+  "./index.html",
+  "./lib/Dexie/dexie.js",
+  "./style.css",
+  "./lib/fontawesome/all.js",
+  "./Db.js",
+  "./main.js",
   "https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;1,200;1,300;1,400;1,600&display=swap",
   "https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap",
 ]
