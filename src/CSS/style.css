@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap');
+
+/*General style*/
+:root {
+  --Dark-Blue-items:hsl(209, 23%, 22%) ;
+  --Very-Dark-Blue-bg: hsl(207, 26%, 17%);
+  --Very-Dark-Blue-text: hsl(200, 15%, 8%);
+  --Dark-Gray-input: hsl(0, 0%, 52%);
+  --Very-LightGray-bg: hsl(0, 0%, 94%);
+  --White-item-dark-text: hsl(0, 0%, 100%);
+  --main-transition: all linear 0.5s;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+}
+
+svg {
+  transform: scale(2);
+  color: var(--Dark-Blue-items)
+}
+
+svg:active {
+  transform: scale(2.5)
+}
+
+/*style for the app wrapper*/
+main {
+  display: flex;
+  min-height: 95vh;
+  height: 100%;
+  width: 100vw;
+  flex-direction: column;
+  background-color: var(--Very-LightGray-bg);
+  color: var(--Very-Dark-Blue-text);
+  align-items: center;
+  transition: var(--main-transition);
+}
+
+/*Navigation styles*/
+nav {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+  background-color: var(--White-item-dark-text);
+  transition: var(--main-transition);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  font-family: 'Rouge Script', cursive;
+}
+
+nav span{
+  color: #BD81E8;
+  font-family: 'Rouge Script', cursive;
+}
+
+.toggle-theme-btn {
+  padding: 1rem;
+  background-color: transparent;
+  transition: var(--main-transition);
+}
+
+/*style for section for adding todo*/
+.add-todo-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--White-item-dark-text);
+  min-width: 250px;
+  width: 85vw;
+  max-width: 400px;
+  padding: 0.2rem 1rem;
+  border-radius: 10px;
+  margin: 0rem 0rem 0.5rem;
+  transition: var(--main-transition);
+}
+
+.form-section{
+  margin: 3rem 0 ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-todo-section>input {
+  background-color: transparent;
+  padding: 1rem 0;
+  margin-right: 1rem;
+  font-size: 1rem;
+  transition: var(--main-transition)
+}
+
+.add-todo-section button {
+  background-color: transparent;
+  padding: 0.8rem 1rem;
+}
+
+.add-todo-section>input::placeholder {
+  font-size: 1rem;
+  color: black;
+}
+
+/*the following are styles to create a custom select and option tag gotten from w3school.com*/
+/* The container must be positioned relative: */
+.custom-select {
+  position: relative;
+  font-family: Arial;
+  color: black !important;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element: */
+}
+
+.select-selected {
+  transition: var(--main-transition);
+  background-color: var(--White-item-dark-text);
+  color: black;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 18px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  transition: var(--main-transition);
+  border-color: var(--Very-Dark-Blue-text) transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  transition: var(--main-transition);
+  border-color: transparent transparent var(--Very-Dark-Blue-text) transparent;
+  top: 10px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,.select-selected {
+  color: black !important;
+  padding: 0.8rem 16px;
+  border-radius: 5px;
+  border: none;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: var(--White-item-dark-text);
+  color: var(--Very-Dark-Blue-text);
+  margin: 0.1rem 0;
+  border-radius: 5px;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  transition: var(--main-transition);
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  transition: var(--main-transition);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+/*end of custom select style*/
+
+/*style for the section used for displaying todos*/
+.display-todo{
+  height: 100%;
+  margin: 0rem 0rem 5rem;
+}
+
+.todo-list {
+  list-style: none;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rem 1rem;
+  background-color: var(--White-item-dark-text);
+  min-width: 250px;
+  max-width: 85vw;
+  width: 900px;
+  margin: 0 1rem 0.5rem;
+  border-radius: 5px;
+  transition: var(--main-transition);
+}
+
+.todo-list h4 {
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  margin: 0 1rem;
+  text-align: center;
+  font-weight: 300;
+}
+
+.todo-list .completed {
+  background-color: #BD81E8;
+}
+
+.btn button {
+  background-color: transparent;
+  margin: 0.5rem;
+  padding: 0.5rem 0.1rem;
+}
+
+.btn button>* {
+  pointer-events: none;
+}
+
+.btn button i {
+  transform: scale(2);
+}
+
+.btn button i:active {
+  color: red;
+}
+
+/*style for footer*/
+footer{
+  width: 100vw;
+  margin: 2rem 0 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  text-align: center;
+  transition: var(--main-transition);
+  background-color: var(--White-item-dark-text);
+}
+
+
+/*style to change background color and text color when in darkmode*/
+.dark {
+  background-color: var(--Very-Dark-Blue-bg);
+  color: var(--White-item-dark-text);
+}
+
+.dark nav {
+  background-color: var(--Dark-Blue-items);
+}
+
+.dark nav span{
+  color: #AF51F2;
+}
+
+.dark .add-todo-section {
+  background-color: var(--Dark-Blue-items);
+}
+
+.dark input {
+  color: white;
+}
+
+.dark input::placeholder {
+  color: white;
+}
+
+
+.dark .todo-item {
+  background-color: var(--Dark-Blue-items);
+  color: var(--White-item-dark-text);
+}
+
+.dark .completed {
+  background-color: #AF51F2;
+}
+
+.dark footer{
+  background-color: var(--Dark-Blue-items);
+}
+
+.dark .select-selected{
+  background-color: var(--Dark-Blue-items);
+  color: grey !important;
+}
+
+.dark .select-items{
+  background-color: var(--Dark-Blue-items);
+  color: grey !important;
+}
+
+
+.select-items div,.select-selected{
+  color: grey !important;
+}
+
+.dark .select-selected:after{
+  border-color: white transparent transparent transparent;
+}
+
+.dark .select-selected.select-arrow-active:after{
+  border-color: white transparent transparent transparent;
+  top: 10px;
+}
+
+.dark svg{
+  color: var(--White-item-dark-text);
+}
+
+.deleted{
+  transition: all 1s;
+  transform: scaleY(0);
+}
+
+@media screen and (min-width: 700px){
+  nav{
+    padding: 0.5rem 5rem;
+  }
+  
+  .form-section{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 85vw;
+    max-width: 900px;
+  }
+}

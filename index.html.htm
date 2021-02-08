@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Todo App</title>
+  <!-- HTML -->
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" sizes="57x57" href="/Images/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/Images/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/Images/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/Images/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/Images/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/Images/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/Images/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/Images/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/Images/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/Images/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/Images/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Images/favicon-16x16.png">
+  <meta name="msapplication-TileColor" content="hsl(209, 23%, 22%)">
+  <meta name="msapplication-TileImage" content="/Images/ms-icon-144x144.png">
+  <meta name="theme-color" content="hsl(209, 23%, 22%)">
+  <meta name="apple-mobile-web-app-status-bar" content="hsl(209, 23%, 22%)" />
+  <!-- Fontawesome-->
+  <script src="/lib/fontawesome/all.js" type="text/javascript" charset="utf-8"></script>
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="/src/CSS/style.css">
+  <!--Google fonts-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <!---->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;1,200;1,300;1,400;1,600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+    <!--Navigation-->
+    <nav>
+      <h1><span>My-</span>TO<span>-Do</span></h1>
+      <button class="toggle-theme-btn"><span class="fa fa-sun"></span></button>
+    </nav>
+    <!--Add todo-->
+    <section class="form-section">
+      <form>
+        <div class="add-todo-section">
+          <input type="text" class="todo-input" placeholder="Add Todo...." />
+          <button class="add-todo-btn"><i class="fas fa-plus"></i></button>
+        </div>
+      </form>
+      <!-- Surround the select box within a "custom-select" DIV element.
+Remember to set the width: -->
+      <div class="custom-select" style="width:200px;">
+        <select>
+          <option value="filter">filter by status</option>
+          <option value="All">All</option>
+          <option value="Completed">Completed</option>
+          <option value="Uncompleted">Uncompleted</option>
+        </select>
+      </div>
+    </section>
+    <!--Show Todo-->
+    <section class="display-todo">
+      <ul class="todo-list">
+        <p>Loading...</p>
+      </ul>
+    </section>
+    <section>
+      <footer>
+        <p>&copy; Rd-Tech</p>
+      </footer>
+    </section>
+  </main>
+  <script src="/lib/Dexie/dexie.js" type="text/javascript" charset="utf-8"></script>
+  <script type="module" src="/src/JS/main.js"></script>
+</body>
+
+</html>
